@@ -13,12 +13,12 @@ public class UserService {
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
     public void findAll() {
         for(User user: this.userRepository.findAll() ){
             System.out.println(user);
         }
     }
+
 
     public void initializeUsers() {
 
@@ -37,7 +37,15 @@ public class UserService {
                 .name("Mr. Sample Data")
                 .phone("01012341234")
                 .build();
+
+        this.userRepository.save(user1);
+        this.userRepository.save(user2);
+        this.userRepository.save(user3);
+        this.userRepository.flush();
     }
+
+
+
 
 
 }

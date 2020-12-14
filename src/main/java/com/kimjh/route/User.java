@@ -14,7 +14,7 @@ public class User {
         this.userService = userService;
     }
 
-    @GetMapping("/users")
+    @GetMapping("/getusers")
     public void getUsers() {
         this.userService.findAll();
     }
