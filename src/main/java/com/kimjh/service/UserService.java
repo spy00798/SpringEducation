@@ -14,7 +14,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
     public void findAll() {
-        for(User user: this.userRepository.findAll() ){
+        for(User user : this.userRepository.findAll() ){
             System.out.println(user);
         }
     }
