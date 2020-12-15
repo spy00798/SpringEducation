@@ -1,4 +1,4 @@
-package com.taeseok.apis.model;
+package com.kimjh.model;
 
 import lombok.Builder;
 import lombok.Getter;

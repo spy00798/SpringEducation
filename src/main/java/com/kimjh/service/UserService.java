@@ -1,8 +1,8 @@
-package com.taeseok.apis.service;
+package com.kimjh.service;
 
-import com.taeseok.apis.model.User;
-import com.taeseok.apis.vo.UserRegisterVO;
-import com.taeseok.apis.repository.UserRepository;
+import com.kimjh.model.User;
+import com.kimjh.vo.UserRegisterVO;
+import com.kimjh.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

@@ -1,6 +1,6 @@
-package com.taeseok.apis.repository;
+package com.kimjh.repository;
 
-import com.taeseok.apis.model.User;
+import com.kimjh.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
