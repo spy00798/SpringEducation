@@ -1,9 +1,9 @@
-package com.kimjh.model;
+package com.taeseok.apis.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Getter
@@ -12,9 +12,9 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
+    private int userId;
 
-    @Column(length = 40, nullable = false)
+    @Column(length  = 40, nullable = false)
     private String email;
 
     @Column(length = 20, nullable = false)
@@ -24,18 +24,17 @@ public class User {
     private String phone;
 
     @Builder
-    public User(String email, String name, String phone) {
+    public User(String email, String name, String phone){
         this.email = email;
         this.name = name;
         this.phone = phone;
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         return String.format(
-                "User[user_id, email = '%s', name='%s', phone='%s']",
-                this.user_id, this.email, this.name, this.phone
-
+                "User[userId=%d, email='%s', name='%s', phone='%s']",
+                this.userId, this.email,this.name, this.phone
         );
     }
 }
