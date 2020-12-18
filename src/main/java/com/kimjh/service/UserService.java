@@ -1,5 +1,8 @@
 package com.kimjh.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.kimjh.datamodel.SaleGroupByUserId;
 import com.kimjh.datamodel.UserGradeEnum;
 import com.kimjh.datamodel.UserTotalPaidPrice;
@@ -10,8 +13,6 @@ import com.kimjh.vo.UserRegisterVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class UserService {
@@ -24,12 +25,12 @@ public class UserService {
         this.saleRepository = saleRepository;
     }
 
-    public User find(int userId) throws Exception {
+    public User find(int userId) throws Exception{
         Optional<User> searchedUser = this.userRepository.findById(userId);
-        return searchedUser.orElseThrow(() -> new Exception("해당 유저를 찾지 못하였습니다."));
+        return searchedUser.orElseThrow(() -> new Exception("해당 유저를 찾지 못하였습니다"));
     }
 
-    public List findAll() {
+    public List<User> findAll() {
         return this.userRepository.findAll();
     }
 
@@ -43,13 +44,13 @@ public class UserService {
         User user2 = User.builder()
                 .email("example2@sample.com")
                 .name("Mrs. Sample")
-                .phone("01000000000")
+                .phone("01000001234")
                 .build();
 
         User user3 = User.builder()
                 .email("example3@sample.com")
                 .name("ms. Sample Data")
-                .phone("01000000000")
+                .phone("01012341234")
                 .build();
 
         this.userRepository.save(user1);
@@ -82,13 +83,13 @@ public class UserService {
         if (userTotalPaidPrice.getTotalPaidPrice() < 100000) {
             return UserGradeEnum.FirstGrade;
         }
-        else if (userTotalPaidPrice.getTotalPaidPrice() < 100000) {
+        else if (userTotalPaidPrice.getTotalPaidPrice() < 1000000) {
             return UserGradeEnum.SecondGrade;
         }
-        else if (userTotalPaidPrice.getTotalPaidPrice() < 100000) {
+        else if (userTotalPaidPrice.getTotalPaidPrice() < 3000000) {
             return UserGradeEnum.ThirdGrade;
         }
-        else if (userTotalPaidPrice.getTotalPaidPrice() < 100000) {
+        else if (userTotalPaidPrice.getTotalPaidPrice() < 10000000) {
             return UserGradeEnum.FourthGrade;
         }
         else {
